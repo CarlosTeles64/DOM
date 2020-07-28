@@ -1,82 +1,13 @@
-function initTabNav() {
-  const tabMenu = document.querySelectorAll('.js-tabmenu li')
-  const tabContent = document.querySelectorAll('.js-tabcontent section')
-  tabContent[0].classList.add('ativo')
-  
-  if(tabContent.length && tabContent.length) {
-    function activeTab(index) {
-      tabContent.forEach((section) => {
-        section.classList.remove('ativo')
-      })
-      tabContent[index].classList.add('ativo')
-    }
-    
-    tabMenu.forEach((content, index) => {
-      content.addEventListener('click', () => {
-        activeTab(index)
-      })
-    })
-  }
-}
+// Adicione um atributo data-anime="show-down" e
+// data-anime="show-right" a todos as section's
+// com descricão dos animais.
 
-function initAccordion() {
-  const accordionList = document.querySelectorAll('.js-accordion dt')
-  const activeClass = 'ativo'
-  if(accordionList.length) {
-    accordionList[0].classList.add(activeClass)
-    accordionList[0].nextElementSibling.classList.add(activeClass)
-    function activeAccordion() {
-      this.classList.toggle(activeClass)
-      this.nextElementSibling.classList.toggle(activeClass)
-    }
-    
-    accordionList.forEach((item) => {
-      item.addEventListener('click', activeAccordion)
-    })
-  }
-}
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
 
-function smoothScroll() {
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
-  
-  function scrollToSection(event) {
-    event.preventDefault()
-    const href = event.currentTarget.getAttribute('href')
-    const section = document.querySelector(href)
-    
-    section.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
-  
-  linksInternos.forEach(link => {
-    link.addEventListener('click', scrollToSection)
-  })
-}
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
 
-function initScrollAnimation() {  
-
-  const sections = document.querySelectorAll('.js-section')
-  const halfWindow = window.innerHeight * 0.8
-  if (sections.length > 0) {
-
-    sections[0].classList.add('ativo')
-    window.addEventListener('scroll', () => {
-
-      sections.forEach((section) => {
-        const sectionOffSet = section.getBoundingClientRect()
-        const sectionOffSetTop = (sectionOffSet.top - halfWindow) < 0
-        if(sectionOffSetTop)
-          section.classList.add('ativo')
-        else 
-          section.classList.remove('ativo')
-      })
-    })
-  }
-}
-
-initTabNav()
-initAccordion()
-smoothScroll()
-initScrollAnimation()
+// Substitua todas as classes js- por data atributes.
