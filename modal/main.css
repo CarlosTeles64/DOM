@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: #e7e6e6;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+
+    overflow-y: hidden;
+}
+.modal {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+
+    border-radius: 8px;
+}
+.modal.active {
+    animation: animateModal 2s forwards;
+}
+.modal span {
+    max-width: 210px;
+    text-align: center;
+    color: #B6B6B680;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 35px 100px;
+}
+.img-bg {
+    height: 100px;
+    box-shadow: 0 4px 20px -10px rgba(0, 0, 0, .5);
+    border-radius: 0 0 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 23px;
+}
+.img-bg::after {
+    content: 'Create Your Account';
+    font-size: 24px;
+    color: #37FA85;
+    max-width: 200px;
+    text-align: center;
+}
+form {
+    margin: 18px 0 50px 0;
+    width: 100%;
+}
+form .camp {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+form .camp:nth-last-child(2) {
+    margin: 16px 0;
+}
+form .camp input {
+    padding: 16px;
+    min-width: 290px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .20);
+    font-size: 14px;
+    font-family: 'Roboto',sans-serif;
+}
+form .camp label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #B6B6B680;
+    opacity: 1;
+    pointer-events: none;
+
+    transition: .3s;
+}
+
+
+input:focus ~ label, input:valid ~ label{
+    opacity: 0;
+    transform: translate3d(-16px, 0, 0);
+}
+
+button {
+    font-size: 24px;
+    padding: 10px;
+    background: #37FA85;
+    color: #ffffff;
+
+    margin-bottom: 17px;
+
+    cursor: pointer;
+}
+form .camp input, button {
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+
+@keyframes animateModal {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 2000px, 0);
+    }
+}
