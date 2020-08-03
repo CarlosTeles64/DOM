@@ -1,0 +1,131 @@
+:root {
+    --main-background-color: #F2F9FF;
+    --main-color: #fff;
+    --hover-button-color: #44A7FA;
+    --text-color: #a4b7c5;
+    --shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+li, ul {
+    list-style: none;
+}
+
+#pageColor {
+    background: var(--main-background-color);
+    height: 100vh;
+}
+#container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--main-color);
+    box-shadow: var(--shadow);
+}
+header span i {
+    font-size: 1.5rem;
+    margin-right: 1.2rem;
+}
+header .menu {
+    display: flex;
+}
+header .menu .menu-item{
+    flex: 1;
+    position: relative;
+}
+header .menu .menu-item:hover {
+    cursor: pointer;
+}
+
+header .menu .menu-item .menu-item-content, header .menu .menu-item .drop-down-menu li {
+    padding: 15px 25px;
+}
+
+header .menu .menu-item .menu-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header .menu .menu-item-content:hover, header .menu .menu-item-content.active  {
+    background: var(--hover-button-color);
+    color: var(--main-color);
+}
+
+header .menu .menu-item .menu-item-content .menu-item-title {
+    display: flex;
+    align-items: center;
+}
+header .menu .menu-item .drop-down-menu {
+    position: absolute;
+    left: 0;
+    top: 80px;
+
+    background: var(--main-color);
+
+    border-radius: 8px;
+
+    box-shadow: var(--shadow);
+
+    display: none;
+    
+    width: 100%;
+}
+header .menu .menu-item .drop-down-menu.active {
+    display: block;
+}
+
+header .menu .menu-item .drop-down-menu:before {
+    content: '';
+
+    position: absolute;
+    right: 43px;
+    top: -15px;
+
+    width: 0; 
+    height: 0;
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--main-color);
+}
+header .menu .menu-item .drop-down-menu li, header .menu .menu-item .drop-down-menu li::before {
+    transition: .2s;
+}
+header .menu .menu-item .drop-down-menu li {
+    position: relative;
+}
+header .menu .menu-item .drop-down-menu li:hover {
+    color: rgba(0, 0, 0, .5);
+}
+header .menu .menu-item .drop-down-menu li::before {
+    content: '';
+    
+    position: absolute;
+    
+    width: 3px;
+    height: 0;
+    
+    background: var(--hover-button-color);
+    
+    left: 0;
+    bottom: 0;
+}
+header .menu .menu-item .drop-down-menu li:hover::before {
+    height: 100%;
+}
+header .menu .menu-item .drop-down-menu li + li {
+    border-top: 1px solid var(--text-color);
+}
