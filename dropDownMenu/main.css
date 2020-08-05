@@ -44,6 +44,7 @@ header .menu {
 header .menu .menu-item{
     flex: 1;
     position: relative;
+    margin-right: 1rem;
 }
 header .menu .menu-item:hover {
     cursor: pointer;
@@ -59,7 +60,7 @@ header .menu .menu-item .menu-item-content {
     align-items: center;
 
 }
-header .menu .menu-item-content:hover, header .menu .menu-item-content.active  {
+header .menu .menu-item-content:hover, header .menu .menu-item.active .menu-item-content {
     background: var(--hover-button-color);
     color: var(--main-color);
 }
@@ -83,7 +84,7 @@ header .menu .menu-item .drop-down-menu {
     
     width: 100%;
 }
-header .menu .menu-item .drop-down-menu.active {
+header .menu .menu-item.active .drop-down-menu {
     display: block;
 }
 
