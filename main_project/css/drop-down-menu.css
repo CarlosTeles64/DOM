@@ -28,7 +28,7 @@
     }
 }
 
-.dropDownMenu li:hover {
+.dropDownMenu li a:hover {
     color: #fff;
 }
 .dropDownMenu::before {

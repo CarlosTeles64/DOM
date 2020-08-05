@@ -10,9 +10,15 @@ export default function initDropDownMenu() {
   }
   function outsideClick(element, callback) {
     const html = document.documentElement
-    html.addEventListener('click', handleOutsideClick)
+    const outside = 'already-added'
+    element.setAttribute(outside, '')
+
+    if(!element.hasAttribue(outside)) {
+      html.addEventListener('click', handleOutsideClick)
+    }
     function handleOutsideClick(event) {
         if(!element.contains(event.target))
+          html.removeEventListener('click', handleOutsideClick)
           callback()
     }
   }

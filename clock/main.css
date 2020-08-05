@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary-color: #7D8198;
+  --secondary-color: #6a6f83;
+  --terceary-color: ##F24C3D;
+}
+
+body {
+  height: 100vh;
+
+  background: radial-gradient(#7D8198, #757A90, #60657a);
+
+  font-family: 'Roboto', sans-serif;
+
+  font-size: 18px;
+}
+.pauseIcon {
+  width: 25px;
+  height: 25px;
+  
+
+  background: url(./assets/pause.svg);
+}
+.startIcon {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 8px;
+
+  background: white;
+}
+
+.resetIcon {
+  background: url(./assets/restart.svg) no-repeat;  
+
+  height: 25px;
+  width: 25px;
+
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: white;
+
+  text-align: center;
+}
+.container {
+
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container main .ctn-buttons {
+  display: flex;
+  align-items: center;
+}
+
+button#pause, button#reset {
+  background: transparent;
+
+  height: 60px;
+  width: 60px; 
+
+  border: 3px solid var(--secondary-color);
+}
+button#start {
+  height: 80px;
+  width: 80px; 
+
+  margin: 0 15px;
+
+  background: linear-gradient(145deg, #f53625, #ff5141);
+
+  font-size: 2.7rem;
+}
+.container .display {
+  font-size: 10rem;
+
+  color: #ffffff;
+}
