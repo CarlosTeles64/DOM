@@ -12,6 +12,7 @@
 [data-dropdown] .dropDownMenu {
     display: none;
 }
+
 [data-dropdown].active .dropDownMenu {
     display: block;
     animation: show-up .3s forwards;

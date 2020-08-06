@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Mobile Menu</title>
+  <link rel="stylesheet" href="menu-mobile.css">
+</head>
+<body>
+  <div class="container">
+    <button class="ctn-button-open" data-button="open"></button>
+    <div data-menu>
+      <header><h1>Kiska</h1><button data-button="close" class="ctn-button-close"><span><i class="fas fa-arrow-left"></i></span></button></header>
+      <main>
+        <section class="customize">
+          <span class="section-title">Customize</span>
+          <ul>
+            <li><span><i class="far fa-user"></i></span>Profile</li>
+            <li><span><i class="fas fa-cog"></i></span>Settings</li>
+            <li><span><i class="far fa-credit-card"></i></span>Payments</li>
+          </ul>
+        </section>
+        <section class="tools">
+          <span class="section-title">Tools</span>
+          <ul>
+            <li><span><i class="fas fa-sync"></i></i></span>Sync</li>
+            <li><span><i class="fas fa-chart-pie"></i></span>Analytics</li>
+            <li><span><i class="fas fa-database"></i></i></span>Database</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="menu-mobile.js"></script>
+</body>
+</html>
